@@ -4,18 +4,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Itachi | 朱天宇</title>
+  <title>Node中的url模块 | 朱天宇</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="鼬只要是人都是依靠自己的知识和认知并且也被其束缚着生活的，那叫做现实。但知识和认知是暖昧不清的东西，现实也许只是镜花水月，人都是活在自己的执念中的，你不这样认为吗？">
+  <meta name="description" content="在使用node时，通常需要使用一些第三方包，其实node有一些核心模块可以直接使用。
+node的核心模块node 的核心模块path：处理文件路径。fs：操作文件系统。child_process：新建子进程。util：提供一系列实用小工具。http：提供HTTP服务器功能。url：用于解析URL。querystring：解析URL中的查询字符串。crypto：提供加密和解密功能。其他
+url模块u">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Itachi">
-<meta property="og:url" content="http://yoursite.com/2017/02/02/itachi/index.html">
+<meta property="og:title" content="Node中的url模块">
+<meta property="og:url" content="http://yoursite.com/2016/12/06/Node中的url模块/index.html">
 <meta property="og:site_name" content="朱天宇">
-<meta property="og:description" content="鼬只要是人都是依靠自己的知识和认知并且也被其束缚着生活的，那叫做现实。但知识和认知是暖昧不清的东西，现实也许只是镜花水月，人都是活在自己的执念中的，你不这样认为吗？">
-<meta property="og:updated_time" content="2017-02-06T12:42:09.360Z">
+<meta property="og:description" content="在使用node时，通常需要使用一些第三方包，其实node有一些核心模块可以直接使用。
+node的核心模块node 的核心模块path：处理文件路径。fs：操作文件系统。child_process：新建子进程。util：提供一系列实用小工具。http：提供HTTP服务器功能。url：用于解析URL。querystring：解析URL中的查询字符串。crypto：提供加密和解密功能。其他
+url模块u">
+<meta property="og:updated_time" content="2017-02-24T12:45:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Itachi">
-<meta name="twitter:description" content="鼬只要是人都是依靠自己的知识和认知并且也被其束缚着生活的，那叫做现实。但知识和认知是暖昧不清的东西，现实也许只是镜花水月，人都是活在自己的执念中的，你不这样认为吗？">
+<meta name="twitter:title" content="Node中的url模块">
+<meta name="twitter:description" content="在使用node时，通常需要使用一些第三方包，其实node有一些核心模块可以直接使用。
+node的核心模块node 的核心模块path：处理文件路径。fs：操作文件系统。child_process：新建子进程。util：提供一系列实用小工具。http：提供HTTP服务器功能。url：用于解析URL。querystring：解析URL中的查询字符串。crypto：提供加密和解密功能。其他
+url模块u">
   
     <link rel="alternative" href="/atom.xml" title="朱天宇" type="application/atom+xml">
   
@@ -67,12 +73,16 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-itachi" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-Node中的url模块" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/02/itachi/" class="article-date">
-  <time datetime="2017-02-02T12:38:22.000Z" itemprop="datePublished">2017-02-02</time>
+    <a href="/2016/12/06/Node中的url模块/" class="article-date">
+  <time datetime="2016-12-06T03:23:51.000Z" itemprop="datePublished">2016-12-06</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -81,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Itachi
+      Node中的url模块
     </h1>
   
 
@@ -89,21 +99,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="鼬"><a href="#鼬" class="headerlink" title="鼬"></a>鼬</h1><p>只要是人都是依靠自己的知识和认知并且也被其束缚着生活的，那叫做现实。但知识和认知是暖昧不清的东西，现实也许只是镜花水月，人都是活在自己的执念中的，你不这样认为吗？</p>
-
+        <pre><code>在使用node时，通常需要使用一些第三方包，其实node有一些核心模块可以直接使用。
+</code></pre><h2 id="node的核心模块"><a href="#node的核心模块" class="headerlink" title="node的核心模块"></a>node的核心模块</h2><p>node 的核心模块<br>path：处理文件路径。<br>fs：操作文件系统。<br>child_process：新建子进程。<br>util：提供一系列实用小工具。<br>http：提供HTTP服务器功能。<br>url：用于解析URL。<br>querystring：解析URL中的查询字符串。<br>crypto：提供加密和解密功能。<br>其他</p>
+<h2 id="url模块"><a href="#url模块" class="headerlink" title="url模块"></a>url模块</h2><h3 id="url模块的三种方法"><a href="#url模块的三种方法" class="headerlink" title="url模块的三种方法"></a>url模块的三种方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1.url.parse(str,<span class="literal">true</span>) //将字符串转成对象,第二个参数默认为<span class="literal">false</span>，为<span class="literal">true</span>时，返回的url对象中，query的属性为一个对象。</div><div class="line">2.url.format(urlObj) //用于将对象转成字符串</div><div class="line">3.url.resolve(from,to)</div><div class="line">	url.resolve(<span class="string">"http://whitemu.com"</span>,<span class="string">"gulu"</span>);</div><div class="line">	/*</div><div class="line">	返回值：</div><div class="line">	<span class="string">'http://whitemu.com/gulu'</span></div><div class="line">	*/</div></pre></td></tr></table></figure>
+<h3 id="url使用"><a href="#url使用" class="headerlink" title="url使用"></a>url使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var url = require(<span class="string">'url'</span>);</div><div class="line">var str = <span class="string">'http://poiu:123@127.0.0.1:3000/?name=tom#a'</span>;</div><div class="line">var urlObj = url.parse(str,<span class="literal">true</span>); </div><div class="line">console.log(urlObj);</div><div class="line">/*</div><div class="line"> protocol: <span class="string">'http:'</span>, 协议</div><div class="line"> slashes: <span class="literal">true</span>, 是否有//</div><div class="line"> auth: <span class="string">'poiu:123'</span>, 用户名和密码</div><div class="line"> host: <span class="string">'127.0.0.1:3000'</span>, 主机</div><div class="line"> port: <span class="string">'3000'</span>, 端口</div><div class="line"> hostname: <span class="string">'127.0.0.1'</span>,域名/IP地址</div><div class="line"> <span class="built_in">hash</span>: <span class="string">'#a'</span>, 片断标识符 指向HTML页面某个DOM元素的ID</div><div class="line"> search: <span class="string">'?name=tom'</span>, ?+查询字符串</div><div class="line"> query: &#123;name:<span class="string">'tom'</span>&#125;,查询字符串</div><div class="line"> pathname: <span class="string">'/'</span>, 端口号和？中间的那部分</div><div class="line"> path: <span class="string">'/2016jsnode?name=tom'</span>, pathname+search</div><div class="line"> href: <span class="string">'http://poiu:123@127.0.0.1:3000/?name=tom#a'</span> 原始的URL</div><div class="line"> */</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2017/02/02/itachi/" data-id="ciyu387je0000iwv4o2wecmka" class="article-share-link" data-share="baidu" data-title="Itachi">分享到</a>
+        <a data-url="http://yoursite.com/2016/12/06/Node中的url模块/" data-id="cizr26dzd0006sov4blkemn2s" class="article-share-link" data-share="baidu" data-title="Node中的url模块">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2017/02/02/itachi/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2016/12/06/Node中的url模块/#ds-thread" class="article-comment-link">评论</a>
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/U/">U</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
 
     </footer>
   </div>
@@ -111,10 +123,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2016/12/26/函数调用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          函数调用
+        
+      </div>
+    </a>
   
-    <a href="/2017/01/16/JavaScript总结/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2016/09/10/js阻止子元素响应父元素事件/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">JavaScript总结</div>
+      <div class="article-nav-title">js阻止子元素响应父元素事件</div>
     </a>
   
 </nav>
@@ -124,7 +145,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2017/02/02/itachi/" data-title="Itachi" data-url="http://yoursite.com/2017/02/02/itachi/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/12/06/Node中的url模块/" data-title="Node中的url模块" data-url="http://yoursite.com/2016/12/06/Node中的url模块/"></div>
   </section>
 </section>
       

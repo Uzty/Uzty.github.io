@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>利用border属性绘制简单图形 | 朱天宇</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="平时在写网页时，border属性一般都会用来给盒子添加边框;但是通过对border做一些小小的控制，就可以实现简单的图形绘制效果如下图：
+代码：1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用border属性绘制简单图形">
+<meta property="og:url" content="http://yoursite.com/2016/04/02/利用border属性绘制简单图形/index.html">
+<meta property="og:site_name" content="朱天宇">
+<meta property="og:description" content="平时在写网页时，border属性一般都会用来给盒子添加边框;但是通过对border做一些小小的控制，就可以实现简单的图形绘制效果如下图：
+代码：1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset">
+<meta property="og:image" content="data:image/jpg;base64,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">
+<meta property="og:image" content="data:image/jpg;base64,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">
+<meta property="og:updated_time" content="2017-02-28T14:44:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用border属性绘制简单图形">
+<meta name="twitter:description" content="平时在写网页时，border属性一般都会用来给盒子添加边框;但是通过对border做一些小小的控制，就可以实现简单的图形绘制效果如下图：
+代码：1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset">
+<meta name="twitter:image" content="data:image/jpg;base64,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">
+  
+    <link rel="alternative" href="/atom.xml" title="朱天宇" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">朱天宇</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-利用border属性绘制简单图形" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/02/利用border属性绘制简单图形/" class="article-date">
+  <time datetime="2016-04-02T13:33:21.000Z" itemprop="datePublished">2016-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利用border属性绘制简单图形
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>平时在写网页时，border属性一般都会用来给盒子添加边框;<br>但是通过对border做一些小小的控制，就可以实现简单的图形绘制<br>效果如下图：<br><img src="data:image/jpg;base64,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" alt=""></p>
+<p>代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">&lt;title&gt;triangle&lt;/title&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">    .shape &#123;</div><div class="line">        <span class="built_in">float</span>: left;</div><div class="line">        margin-left: 50px;</div><div class="line">        width:0;</div><div class="line">        height:0;</div><div class="line">        border-width: 30px;</div><div class="line">        border-style:solid;</div><div class="line">        border-color: transparent transparent transparent transparent ;</div><div class="line">    &#125;</div><div class="line">    /*三角形*/</div><div class="line">    .triangle &#123;</div><div class="line">        border-bottom: 30px solid skyblue;</div><div class="line">    &#125;</div><div class="line">    /*标签*/</div><div class="line">    .mark &#123;</div><div class="line">        border-left: 30px solid skyblue;</div><div class="line">        border-top: 30px solid skyblue;</div><div class="line">        border-right: 30px solid skyblue;</div><div class="line">    &#125;</div><div class="line">    /*直角三角形*/</div><div class="line">    .right-triangle &#123;</div><div class="line">        border-left: 30px solid skyblue;</div><div class="line">        border-bottom: 30px solid skyblue;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class=<span class="string">"shape triangle"</span>&gt;&lt;/div&gt;</div><div class="line">    &lt;div class=<span class="string">"shape mark"</span>&gt;&lt;/div&gt;</div><div class="line">    &lt;div class=<span class="string">"shape right-triangle"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>其实原理很简单：<br>把盒子宽高都设置为0，那么给该盒子添加一定宽度的边框，那么每条边都会像三角形一样，这时在把不需要的边设置为透明，就会有所需要的效果。<br><img src="data:image/jpg;base64,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" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2016/04/02/利用border属性绘制简单图形/" data-id="cizr26dzt000ssov4yw3tjvwh" class="article-share-link" data-share="baidu" data-title="利用border属性绘制简单图形">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2016/04/02/利用border属性绘制简单图形/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/02/初学Bootstrap/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          初学Bootstrap
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/15/常用CSS优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">常用CSS优化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/04/02/利用border属性绘制简单图形/" data-title="利用border属性绘制简单图形" data-url="http://yoursite.com/2016/04/02/利用border属性绘制简单图形/"></div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bootstrap/">Bootstrap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Flex布局/">Flex布局</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络问题/">网络问题</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Event/">Event</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flex布局/">Flex布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/U/">U</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/弹性布局/">弹性布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络问题/">网络问题</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Flex布局/" style="font-size: 10px;">Flex布局</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/U/" style="font-size: 10px;">U</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/优化/" style="font-size: 10px;">优化</a> <a href="/tags/弹性布局/" style="font-size: 10px;">弹性布局</a> <a href="/tags/网络问题/" style="font-size: 10px;">网络问题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/02/itachi/">Itachi</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/16/JavaScript总结/">JavaScript总结</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/26/函数调用/">函数调用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/06/Node中的url模块/">Node中的url模块</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/10/js阻止子元素响应父元素事件/">js阻止子元素响应父元素事件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://www.ruanyifeng.com/" target="_blank">阮一峰博客</a>
+          </li>
+        
+          <li>
+            <a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 朱天宇<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zty"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
